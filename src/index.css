@@ -1,0 +1,223 @@
+*{
+  margin:5px;
+  padding:0;
+  box-sizing: border-box;
+}
+body{
+  border:2px solid black;
+  border-radius:5px;
+}
+.header{
+  padding:5px;
+  width:100%;
+  justify-content:space-between;
+  flex-wrap: wrap;
+   display: flex; 
+}
+.navButton{
+background-color:transparent;
+border:0.2px solid black;
+padding:5px;
+border-radius:5px;
+margin:2px;
+}
+.navButton:hover{
+  background-color:transparent;
+  border:0.2px solid black;
+  padding:5px;
+  box-shadow:5px 5px 10px ;
+  border:1px solid black;
+  }
+
+.hero {
+  display:flex;
+  flex-direction:row;
+  border: 1px solid black;
+  border-radius: 5px;
+  animation: applyShadow 1s forwards ease-out;
+}
+
+.heroImg {
+  height: 350px;
+  width: 350px;
+  position: relative;
+  opacity: 0; 
+  animation: hopInRight 1s forwards ease-out;
+  animation-delay: 0.5s; 
+}
+
+
+.textBox {
+  opacity: 0; 
+  animation: hopInLeft 1s forwards ease-out;
+}
+
+.Services{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+
+
+}
+
+.typewriter {
+  font-family: monospace;
+  display: inline-block;
+  overflow: hidden; 
+  white-space: nowrap; 
+  border-right: 3px solid; 
+  width: 0; 
+  animation: typing 3.5s steps(22) forwards, blink 0.75s step-end infinite ;
+  animation-delay: 2s;
+}
+.navBar{
+  display:flex;
+  flex-direction:row;
+}
+.menu{
+  display:none;
+}
+
+@keyframes typing {
+  from {
+      width: 0;
+  }
+  to {
+      width: 25%; 
+  }
+}
+
+@keyframes blink {
+  from {
+      border-right-color: black;
+  }
+  to {
+      border-right-color: transparent;
+  }
+}
+
+@keyframes hopInLeft {
+  0% {
+      transform: translate(-100%, -100%); 
+      opacity: 0;
+  }
+  100% {
+      transform: translate(0, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes hopInRight {
+  0% {
+      transform: translate(100%, -100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translate(0, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes applyShadow {
+  0% {
+      box-shadow: none;
+  }
+  100% {
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  }
+}
+@keyframes bounce{
+  from{
+    transform: translateY(0);
+  }
+  to{
+    transform:translateY(-5%);
+  }
+}
+.service{
+  border:2px solid black;
+  border-radius:5px;
+  padding:10px;
+  margin:25px;
+  height:25%;
+  width:25%;
+  background-color: rgb(240, 240, 240);
+  color:black;
+  font-family: monospace;
+}
+.serviceImg{
+  border:2px dashed ;
+  border-radius:5px;
+  padding:10px;
+
+}
+.serviceImg:hover .innerService{
+animation:bounce 2s;
+box-shadow:5px 10px 10px;
+}
+.about{
+  border:1px solid black;
+  border-radius:5px;
+  box-shadow:5px 5px 10px;
+  padding:5px;
+}
+@media screen and (max-width: 576px) {
+  *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  .extra{
+    display:none;
+  }
+  .heroImg {
+    height: 200px;
+    width: 100%; 
+  }
+   body{
+    width:inherit;
+    border:transparent;
+   }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 10px; 
+  }
+  .textBox {
+    width: 100%; 
+    text-align: center; 
+  }
+
+  .navBar {
+    display: none !important; 
+  }
+
+  .menu {
+    display: block !important; 
+    margin-top: 10px; 
+  }
+  .Services {
+    padding: 5px; 
+  }
+  .service{
+    border:2px solid black;
+    border-radius:5px;
+    height:70%;
+    width:70%;
+  }
+  .logo{
+    height:25%;
+    width:25%;
+    border:2px solid black;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%; 
+    }
+  }
+}
